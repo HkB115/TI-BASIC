@@ -1,0 +1,53 @@
+ClrHome
+StoreGDB 0
+
+CoordOff
+GridOff
+AxesOff
+LabelOff
+ExprOff
+ClrDraw
+
+62->Ymax:0->Ymin
+94->Xmax:0->Xmin
+
+Func
+FnOff 0,1,2,3,4,5,6,7,8,9
+PlotsOff 
+
+Full
+Xmax/2->Xmax
+Ymax/2->Ymax
+~Xmax->Xmin
+~Ymax->Ymin
+Degree
+
+15->H:20->M:18->S
+
+Circle(0,0,30)
+For(X,1,12)
+	Text(28-int(cos(X*30)*25),46+int(sin(30*X)*25),X)
+End
+
+{0,0,0}->|LANG
+
+While getKey=0
+	getTime->|LTIME
+	
+	If |LTIME(3)!=|LANG(3)/6:Line(0,0,sin(|LANG(3))*S,cos(|LANG(3))*S,0)
+	
+	If |LTIME(2)!=|LANG(2)/6:Then
+		Line(0,0,sin(|LANG(2))*M,cos(|LANG(2))*M,0)
+	End
+	
+	"SET ANGS"
+	|LTIME(1)*30+|LTIME(2)/2->|LANG(1)
+	|LTIME(2)*6->|LANG(2)
+	|LTIME(3)*6->|LANG(3)
+	
+	Line(0,0,sin(|LANG(1))*H,cos(|LANG(1))*H
+	Line(0,0,sin(|LANG(2))*M,cos(|LANG(2))*M
+	Line(0,0,sin(|LANG(3))*S,cos(|LANG(3))*S
+	
+End
+ClrHome
