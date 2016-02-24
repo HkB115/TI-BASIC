@@ -1,0 +1,273 @@
+StoreGDB 0
+ClrDraw:ClrHome:Clear Entries
+Text(0,0,"FOURTRIS
+Text(6,0,"By Hunter Bennett
+Text(12,0,"build:
+Text(18,0,"0.8.5 BETA","      ","11/1/13"
+Text(24,0,"Release Notes:
+Text(33,0," - ","Tetrominoes","!"
+Text(39,0,"
+Text(45,0,"
+Text(57,13,"[Press ENTER to start]
+Pause 
+ClrDraw:ClrHome
+AxesOff:CoordOff:ExprOff:FnOff :GridOff:LabelOff:RectGC:Func
+ZStandard
+84->Xmin:72->Ymax:ZInteger
+Output(1,1,"Loading...
+Output(8,1,"Please wait
+SetUpEditor |LCNFIG
+SetUpEditor |LLEVEL
+SetUpEditor |LSCORE
+SetUpEditor |LAX:SetUpEditor |LAY:SetUpEditor |LAZ:SetUpEditor |LBX:SetUpEditor |LBY:SetUpEditor |LCX:SetUpEditor |LCY:SetUpEditor |LCZ:SetUpEditor |LORDER
+SetUpEditor |LTETRA
+SetUpEditor L1
+SetUpEditor L4
+{0,0,0,0}->L1
+Ans->|LAX:Ans->|LAY:Ans->|LAZ:Ans->|LBX:Ans->|LBY:Ans->|LCX:Ans->|LCY:Ans->|LCZ
+{0,0,0,0,0,0,0,0,0,0,0,0,~1,~1,0,1,0,1,0,0,0,0,~1,1,0,1,0,0,0,0,0,~2,~1,1,0,0,0,0,0,0,0,~1,~1,1,0,0,1,0,0,0,0,~1,1,1,0,0,0,1,0,0,0,~1,0,1,0,1,1,0,0,0,0,~1,0,1,0,0,1,1,0,0}->|LTETRA
+{18.04,24.1,28.14,32.18,36.22,40.26,44.3,48.34,52.38,56.42,60.46,66.5,.54,.58,.62,0,0,0,73,77.02,81.06,85.1}->L4
+If max(0={dim(|LCNFIG),dim(|LLEVEL),dim(|LSCORE)}
+Then
+	{0,0,0,0,0,0,0}->|LCNFIG
+	{0,0,0,0,0,0,0}->|LLEVEL
+	{0,0,0,0,0,0,0}->|LSCORE
+End
+Archive |LSCORE
+"MEMORY          OPTIMIZATION"
+DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar theta
+ClrDraw:ClrHome
+Horizontal 0
+Horizontal 1
+{0,1,2,14,15,21,63,69,70,92,93,94}
+For(theta,1,dim(Ans:Vertical Ans(theta):End
+{15076907,00612161,00622162,63619461,63629462,70169216,70179217,70319231,70329232,70469246,70479247,70619261,70629262}
+For(theta,1,dim(Ans:Line(iPart(Ans(theta)/|E6),iPart(|E2fPart(Ans(theta)/|E6)),iPart(|E2fPart(Ans(theta)/|E4)),|E2fPart(Ans(theta)/|E2))
+End
+Pt-On(18,4
+Pt-On(18,4,2
+Pt-On(66,4
+Pt-On(66,4,2
+For(theta,2,11
+	Pt-On(iPart(L4(theta)),4
+	Pt-On(iPart(L4(theta)),4,2
+End
+For(theta,2,14
+	Pt-On(18,|E2fPart(L4(theta))
+	Pt-On(18,|E2fPart(L4(theta)),2
+	Pt-On(66,|E2fPart(L4(theta))
+	Pt-On(66,|E2fPart(L4(theta)),2
+End
+Text(2,72,"Score
+Text(8,72,"         "
+Text(17,72,"Level
+Text(23,72,"        "
+Text(32,72,"Lines
+Text(38,72,"        "
+Text(54,7,"+"
+{55.03,54.04,54.05,54.06,54.07,54.08,54.09,54.1,54.11,54.12,54.13,50.05,50.06,50.07,50.08,50.09,50.1,50.11,49.05,49.08,48.05,48.08,47.05,47.08,46.05,44.06,44.07,44.08,44.09,44.1,43.05,43.11,42.05,42.11,41.05,41.11,40.06,40.07,40.08,40.09,40.1,38.05,38.06,38.07,38.08,38.09,38.1,37.11,36.11,35.11,34.05,34.06,34.07,34.08,34.09,34.1,32.05,32.06,32.07,32.08,32.09,32.1,32.11,31.05,31.08,30.05,30.08,30.09,29.05,29.08,29.1,28.06,28.07,28.11,26.05,25.05,24.05,24.06,24.07,24.08,24.09,24.1,24.11,23.05,22.05,20.05,20.06,20.07,20.08,20.09,20.1,20.11,19.05,19.08,18.05,18.08,18.09,17.05,17.08,17.1,16.06,16.07,16.11,13.05,13.11,12.05,12.06,12.07,12.08,12.09,12.1,12.11,11.05,11.11,8.06,8.07,8.11,7.05,7.08,7.11,6.05,6.08,6.11,5.05,5.08,5.11,4.05,4.09,4.1}
+For(theta,1,dim(Ans:Pxl-On(iPart(Ans(theta)),|E2fPart(Ans(theta)))
+End
+StorePic 4
+Lbl MM
+ClrDraw:ClrHome:RecallPic 4
+DelVar G
+DelVar K
+"                     "->Str0
+If S<1 or S>5 or S=2
+1->S
+100->T
+Text(5,28,"New Game"
+Text(15,28,"Resume"
+If |LLEVEL(1)!=1
+Line(28,44,50,44
+Text(25,28,"Scores
+Text(35,28,"Info
+Text(45,28,"Quit
+Lbl CS
+Text(48,71,Str0:Text(54,71,Str0:10randInt(1,7)->T
+seq(|LTETRA(T+theta),theta,1,4)->|LBX
+seq(|LTETRA(T+theta+4),theta,1,4)->|LBY
+For(theta,1,4)
+	Pt-On(iPart(L4(21+|LBX(theta))),|E2fPart(L4(21+|LBY(theta))),2
+End
+DelVar T
+Lbl SM
+5(S=0 or S=1)+15(S=2)+25(S=3)+35(S=4)+45(S=5)->Z
+Text(Z,24,">
+Repeat Ans
+	T+1->T
+	If T>=100
+	Goto CS
+	getKey->K
+End
+Text(Z,24,"   
+If K=25
+1(S=2 and |LLEVEL(1)=1)+1(S=3 and |LLEVEL(1)!=1)+2(S=3 and |LLEVEL(1)=1)+3(S=4)+4(S=5)+5(S=1)->S
+If K=34
+1(S=5)+2(S=1 and |LLEVEL(1)=1)+3(S=2 and |LLEVEL(1)=1)+3(S=1 and |LLEVEL(1)!=1)+4(S=3)+5(S=4)->S
+If K=25 or K=34:Goto SM
+1(K=92)+2(K=93 and |LLEVEL(1)=1)+3(K=94)+4(K=82)+5(K=83)+S(K=105)->G
+If G=1:Goto NG
+If G=2:Goto RE
+If G=3:Goto HS
+If G=4:Goto DI
+If G=5:Goto EX
+Goto SM
+
+"NEW GAME"
+Lbl NG
+ClrDraw:ClrHome:RecallPic 4
+0->|LLEVEL(2)
+1->|LLEVEL(3)
+0->|LLEVEL(4)
+randInt(1,7)->|LLEVEL(5)
+randInt(1,7)->|LLEVEL(6)
+Goto SU
+
+"RESUME"
+Lbl RE
+ClrDraw:ClrHome:RecallPic 0
+Lbl SU
+DelVar T
+Text(8,72,|LLEVEL(2)
+Text(23,72,|LLEVEL(3)
+Text(38,72,|LLEVEL(4)
+7->A:14->B:7->F:14->G
+seq(|LTETRA(10|LLEVEL(5)+theta),theta,1,4)->|LAX
+seq(|LTETRA(10|LLEVEL(5)+theta+4),theta,1,4)->|LAY
+seq(|LTETRA(10|LLEVEL(6)+theta),theta,1,4)->|LBX
+seq(|LTETRA(10|LLEVEL(6)+theta+4),theta,1,4)->|LBY
+seq(iPart(L4(F+|LAX(theta)))+fPart(L4(G+|LAY(theta))),theta,1,4)->|LAZ
+|LAX->|LCX:|LAY->|LCY:|LAZ->|LCZ
+For(theta,1,4
+	Pt-On(iPart(L4(21+|LBX(theta))),|E2fPart(L4(21+|LBY(theta))),2
+End
+StorePic 0
+|LAZ
+For(theta,1,4
+	Pt-On(iPart(Ans(theta)),|E2fPart(Ans(theta)),2
+End
+1->|LLEVEL(1)
+
+Lbl IP
+Repeat |N=7
+	|LAX->|LCX:|LAY->|LCY:|LAZ->|LCZ:F->A:G->B
+	getKey->K
+	1(K=25)+2(K=24)+3(K=26)+4(K=34)+5(K=14)+6(K=15)+7(K=11)->|N
+	I%+100/3->I%
+	If not(|N) and I%<100
+End
+A-1(|N=2)+1(|N=3)->A
+B-1(|N=4 or I%>=100)+1(|N=1)->B
+(|N=5)|LCX-(|N=6)|LCX+(|N!=5 and |N!=6){0,0,0,0}->L1
+(|N=6)|LCY-(|N=5)|LCY+(|N!=5 and |N!=6)|LCX->|LCX
+(|N=5 or |N=6)L1+(|N!=5 and |N!=6)|LCY->|LCY
+seq(iPart(L4(A+|LCX(theta)))+fPart(L4(B+|LCY(theta))),theta,1,4)->|LCZ
+I%(I%<100)->I%
+seq(pxl-Test(62-|E2fPart(|LCZ(theta)),iPart(|LCZ(theta))),theta,1,4)->L1
+If sum(L1)!=0 and F=7 and G=14
+Goto GO
+If sum(L1)!=0 and G-1=B:Goto NB
+If sum(L1)!=0:End
+If not(sum(L1)
+Then
+	For(theta,1,4
+		Pt-Off(iPart(|LAZ(theta)),|E2fPart(|LAZ(theta)),2
+	End
+	For(theta,1,4
+		Pt-On(iPart(|LCZ(theta)),|E2fPart(|LCZ(theta)),2
+	End
+|LCX->|LAX:|LCY->|LAY:|LCZ->|LAZ:A->F:B->G:End:End
+Goto MM
+
+Lbl NB
+Text(48,71,Str0:Text(54,71,Str0:|LAZ
+For(theta,1,4
+	Pxl-On(62-|E2fPart(Ans(theta)),iPart(Ans(theta)))
+End
+|LLEVEL(3)+1->|LLEVEL(3)
+Text(23,72,|LLEVEL(3)
+StorePic 0
+"CHECK LINES"
+For(B,2,G+2
+	DelVar theta
+	For(A,2,11
+		pxl-Test(62-|E2fPart(L4(B)),iPart(L4(A)))+theta->theta
+	End
+	If theta>=10:Then
+		For(A,2,11
+			Pt-Off(iPart(L4(A)),|E2fPart(L4(B)),2
+			Pt-Off(iPart(L4(A)),|E2fPart(L4(B))
+		End:For(A,2,11
+			Pt-On(iPart(L4(A)),|E2fPart(L4(B))
+			Pt-On(iPart(L4(A)),|E2fPart(L4(B)),2
+		End:For(A,2,11
+			Pt-Off(iPart(L4(A)),|E2fPart(L4(B)),2
+			Pt-Off(iPart(L4(A)),|E2fPart(L4(B))
+		End
+		100+|LLEVEL(2)->|LLEVEL(2)
+		1+|LLEVEL(4)->|LLEVEL(4)
+		B-1->B
+		DelVar theta
+End:End
+Text(8,72,|LLEVEL(2)
+Text(38,72,|LLEVEL(4)
+|LLEVEL(6)->|LLEVEL(5)
+|LBX->|LAX:|LBY->|LAY:randInt(1,7)->|LLEVEL(6)
+For(theta,1,4
+	|LTETRA(10|LLEVEL(6)+theta)->|LBX(theta)
+	|LTETRA(10|LLEVEL(6)+theta+4)->|LBY(theta)
+	Pt-On(iPart(L4(21+|LBX(theta))),|E2fPart(L4(21+|LBY(theta))),2
+End
+7->F:14->G
+seq(iPart(L4(F+|LAX(theta)))+fPart(L4(G+|LAY(theta))),theta,1,4)->|LAZ
+|LAZ
+For(theta,1,4
+	Pt-On(iPart(Ans(theta)),|E2fPart(Ans(theta)),2
+End
+Goto IP
+
+Lbl GO
+ClrDraw:ClrHome:0->|LLEVEL(1)
+Pause "GAME OVER
+Goto MM
+
+Lbl HS
+ClrDraw:ClrHome:SetUpEditor |LSCORE
+RecallPic 4
+Pause 
+Archive |LSCORE
+Goto MM
+
+Lbl DI
+ClrDraw:ClrHome:RecallPic 4
+Text(4,28,"Developer
+Text(10,28,"Hunter
+Text(16,28,"Bennett
+Text(28,28,"build:
+Text(34,28,"0.8.4 BETA
+Text(44,24,">Main Menu
+Pause 
+Goto MM
+
+Lbl EX
+ClrDraw:ClrHome:Output(1,1,"Shutting Down..."
+Archive |LCNFIG
+Archive |LLEVEL
+DelVar |LORDER
+DelVar |LAX
+DelVar |LAY
+DelVar |LAZ
+DelVar |LBX
+DelVar |LBY
+DelVar |LCX
+DelVar |LCY
+DelVar |LCZ
+DelVar |LTETRA
+DelVar L1
+DelVar L4
+DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar theta
+RecallGDB 0
+DelVar GDB0
+ClrDraw:ClrHome:"Goodbye"
